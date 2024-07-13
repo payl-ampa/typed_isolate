@@ -1,14 +1,14 @@
 name: typed_isolate
 description: Easier and type-safe isolate usage with parent and child isolates
 version: 4.0.0
-repository: https://github.com/Levi-Lesches/typed_isolate
+# repository: https://github.com/Levi-Lesches/typed_isolate
 
 environment:
   sdk: ^3.0.0
 
 # Add regular dependencies here.
 dependencies:
-  meta: ^1.15.0
+  meta: ^1.12.0
 
 dev_dependencies:
   test: ^1.21.0
