@@ -53,7 +53,6 @@ abstract class IsolateParent<S, R> {
     });
 
   }
-
   /// Sends the object to the child with the given ID.
   void send({required S data, required Object id}) {
     final port = _sendPorts[id];
@@ -72,6 +71,14 @@ abstract class IsolateParent<S, R> {
     }
     await _subscription?.cancel();
     _receiver?.close();
+    _sendPorts.clear();
+    isolates.clear();
+  }
+
+  /// Clears the isolates and _sendPorts maps
+  /// Useful for when you want to exit an isolate solely through the child
+  @mustCallSuper
+  void cleanup() {
     _sendPorts.clear();
     isolates.clear();
   }
